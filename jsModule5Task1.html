@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="grandParent"  style="border: 2px solid; width: 1000px; height:600px;" style="color:blue;">
+
+        <div id="parent"  style="border: 2px solid; width: 800px; height:400px;" style="color: blueviolet;">
+
+            <div id="child" style="border: 2px solid; width: 600px; height:200px;" style="color:brown;" >
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    //bubbling
+    // document.querySelector("#child").addEventListener('click',()=>{
+    //     console.log("Child Div");
+    // });
+
+    // document.getElementById("parent").addEventListener('click',()=>{
+    //     console.log("Parent Div");
+    // } );
+
+
+    // document.getElementById("grandParent").addEventListener('click',()=>{
+    //     console.log("GrandParent Div");
+    // } );
+
+    //Capturing
+    document.querySelector("#child").addEventListener('click',()=>{
+        console.log("Child Div");
+    },true);
+
+    document.getElementById("parent").addEventListener('click',()=>{
+        console.log("Parent Div");
+    },true );
+
+    document.getElementById("grandParent").addEventListener('click',()=>{
+        console.log("GrandParent Div");
+    },true );
+
+</script>
+</html>
